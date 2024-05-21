@@ -1,1 +1,1 @@
-# The-Holly-Quran
+# The-Holy-Quran
