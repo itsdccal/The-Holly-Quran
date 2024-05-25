@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Daftar Surah"
+                android:text="List Surah"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -112,6 +112,7 @@
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
+
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/navigationBar"
