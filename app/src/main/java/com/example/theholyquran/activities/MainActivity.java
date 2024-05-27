@@ -1,9 +1,11 @@
-package com.example.theholyquran;
+package com.example.theholyquran.activities;
 
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.theholyquran.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,5 +14,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+
     }
+
 }
