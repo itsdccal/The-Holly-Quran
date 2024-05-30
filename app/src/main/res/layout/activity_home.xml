@@ -8,27 +8,32 @@
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay"
         app:elevation="0dp">
 
-        <include layout="@layout/toolbar" />
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
-
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
+            android:id="@+id/main_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/card_view"
                 android:layout_width="match_parent"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"
@@ -36,12 +41,12 @@
                 app:cardElevation="4dp">
 
                 <RelativeLayout
+                    android:id="@+id/relative_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-
                     <ImageView
-                        android:id="@+id/imageView"
+                        android:id="@+id/image_view"
                         android:layout_width="207dp"
                         android:layout_height="196dp"
                         android:layout_alignParentEnd="true"
@@ -53,6 +58,7 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
+                android:id="@+id/tv_kategori"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -63,35 +69,29 @@
                 android:textStyle="bold" />
 
             <LinearLayout
+                android:id="@+id/button_linear_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/btn_surah"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Surah">
-                </Button>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="doa">
-                </Button>
+                    android:text="Surah" />
 
+                <Button
+                    android:id="@+id/btn_doa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Doa" />
 
             </LinearLayout>
 
-            <RelativeLayout
+            <FrameLayout
+                android:id="@+id/surah"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvSurah"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="5dp" />
-
-            </RelativeLayout>
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 

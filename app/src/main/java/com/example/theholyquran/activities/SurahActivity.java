@@ -1,6 +1,6 @@
 package com.example.theholyquran.activities;
 
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class SurahActivity extends Activity {
+public class SurahActivity extends AppCompatActivity {
 }
