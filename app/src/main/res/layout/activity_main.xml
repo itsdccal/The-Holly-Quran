@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imghome"
+        android:id="@+id/img_home"
         android:layout_width="149dp"
         android:layout_height="195dp"
         android:layout_gravity="center_horizontal"
@@ -14,7 +14,7 @@
         android:src="@drawable/img" />
 
     <TextView
-        android:id="@+id/r2obv8p3zydq"
+        android:id="@+id/tv_app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -24,7 +24,7 @@
         android:textSize="30sp" />
 
     <TextView
-        android:id="@+id/rlj59t0w2axs"
+        android:id="@+id/tv_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -34,7 +34,7 @@
         android:textSize="15sp" />
 
     <LinearLayout
-        android:id="@+id/rvc7melblrj"
+        android:id="@+id/layout_button_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
@@ -42,7 +42,7 @@
         android:paddingVertical="20dp">
 
         <Button
-            android:id="@+id/start_btn"
+            android:id="@+id/btn_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="97dp"
