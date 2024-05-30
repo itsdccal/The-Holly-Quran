@@ -37,14 +37,16 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
     public SurahViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
         view = LayoutInflater.from(context).inflate(R.layout.layout_surah, parent, false);
-        return new Holder(view);
+        return new SurahViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull SurahViewHolder holder, int position) {
         Surah surah = list.get(position);
-        holder.tvNumber.setText(String.valueOf(surah.getNumber()));
-        holder.tvAyat.setText(surah.getName());
+        final Surah surahIndo = listIndo.get(position);
+
+        holder.tvNumber.setText(surah.getNumber());
+        holder.tvAyat.setText(surah.getAyatList().size() +" ayat");
         holder.tvInfo.setText(surah.getPlace() + " - " + surah.getAyatCount() + " Ayat");
         holder.tvName.setText(surah.getArabicName());
     }

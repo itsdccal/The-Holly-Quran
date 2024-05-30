@@ -13,21 +13,26 @@ import com.example.theholyquran.R;
 import com.example.theholyquran.adapter.SurahAdapter;
 import com.example.theholyquran.model.Surah;
 
+import java.util.List;
+
 
 public class SurahFragment extends Fragment {
 
-    private RecyclerView recyclerView;
+    private RecyclerView rv_surah;
     private SurahAdapter surahAdapter;
     private List<Surah> surahList;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_surah, container, false);
-        recyclerView = view.findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        surahAdapter = new SurahAdapter(surahList);
-        recyclerView.setAdapter(surahAdapter);
+        rv_surah = view.findViewById(R.id.rv_surah);
+
+        rv_surah.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        surahAdapter = new SurahAdapter(getContext(), surahList);
+
+        rv_surah.setAdapter(surahAdapter);
+
         return view;
     }
 }
