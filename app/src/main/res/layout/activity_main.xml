@@ -11,7 +11,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="139dp"
         android:layout_marginBottom="24dp"
-        android:src="@drawable/img" />
+        android:src="@drawable/logo1" />
 
     <TextView
         android:id="@+id/tv_app_name"
