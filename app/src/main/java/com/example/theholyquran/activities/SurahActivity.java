@@ -1,6 +1,7 @@
 package com.example.theholyquran.activities;
 
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,10 +16,16 @@ import java.util.List;
 
 public class SurahActivity extends AppCompatActivity {
 
+    private ImageView backbtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_surah);
+        backbtn = findViewById(R.id.backbtn);
+        backbtn.setOnClickListener(v -> {
+            finish();
+        });
 
         String json = getIntent().getStringExtra("jsonlist");
         String jsonIndo = getIntent().getStringExtra("jsonlistIndo");
