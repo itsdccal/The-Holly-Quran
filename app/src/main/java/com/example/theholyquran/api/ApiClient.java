@@ -13,8 +13,8 @@ public class ApiClient {
     public static Retrofit getRetrofit() {
 
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
-                .connectTimeout(100, TimeUnit.SECONDS)
-                .readTimeout(100, TimeUnit.SECONDS)
+                .connectTimeout(30, TimeUnit.SECONDS)
+                .readTimeout(30, TimeUnit.SECONDS)
                 .build();
 
         if (retrofit == null) {
