@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_surah">
+
+    <fragment
+        android:id="@+id/navigation_surah"
+        android:name="com.example.theholyquran.ui.fragment.FragmentSurah"
+        android:label="@string/title_surah"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_doa"
+        android:name="com.example.theholyquran.ui.fragment.FragmentDoa"
+        android:label="@string/title_doa"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_about"
+        android:name="com.example.theholyquran.ui.fragment.FragmentAbout"
+        android:label="@string/title_about"
+        tools:layout="@layout/fragment_notifications" />
+</navigation>
