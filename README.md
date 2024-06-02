@@ -36,7 +36,7 @@ Android Studio terinstal di komputer Anda
 Java Development Kit (JDK) versi 8 atau lebih tinggi
 Setup
 Kloning repositori:
-git clone https://github.com/maykoRa/Kings-Library.git
+git clone (https://github.com/itsdccal/The-Holy-Quran)
 Buka proyek di Android Studio:
 Buka Android Studio
 Klik Open an existing Android Studio project
