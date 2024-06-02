@@ -47,3 +47,8 @@ Selesaikan setiap dependensi jika diminta
 Jalankan aplikasi:
 Pilih perangkat atau emulator
 Klik tombol Run (tombol hijau)
+
+referensi : 
+desain : https://www.figma.com/design/hmMbpwIByefwsKP6NuCKJv/My-Quran-Design-Apps?node-id=0-1&t=Ry6wXps1VOA0JBSC-1
+code : https://youtu.be/NKzhWqA9lDw?si=EAQIrt-P5EuCXULz
+code : https://youtu.be/DpR0DtlrD0k?si=OR09cugmFt1V8zEw
