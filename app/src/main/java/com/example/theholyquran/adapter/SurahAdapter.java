@@ -2,6 +2,8 @@ package com.example.theholyquran.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,13 +12,17 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.theholyquran.LauncherSurahActivity;
 import com.example.theholyquran.R;
-import com.example.theholyquran.activities.SurahActivity;
+
+import com.example.theholyquran.local.TemporaryData;
 import com.example.theholyquran.model.Surah;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHolder> {
 
@@ -24,6 +30,9 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
     private final List<Surah> list;
     private List<Surah> listIndo;
     private View view;
+
+    private ExecutorService executor = Executors.newSingleThreadExecutor();
+    private Handler handler = new Handler(Looper.getMainLooper());
 
     public SurahAdapter(Context context, List<Surah> list, List<Surah> listIndo) {
         this.context = context;
@@ -35,7 +44,7 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
     @Override
     public SurahViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
-        view = LayoutInflater.from(context).inflate(R.layout.layout_surah, parent, false);
+        view = LayoutInflater.from(context).inflate(R.layout.item_surah, parent, false);
         return new SurahViewHolder(view);
     }
 
@@ -55,11 +64,16 @@ public class SurahAdapter extends RecyclerView.Adapter<SurahAdapter.SurahViewHol
                 Gson gson = new Gson();
                 String json = gson.toJson(surah.getAyatList());
                 String jsonIndo = surahIndo != null ? gson.toJson(surahIndo.getAyatList()) : "";
-                Intent intent = new Intent(context, SurahActivity.class);
-                intent.putExtra("jsonlist", json);
-                intent.putExtra("jsonlistIndo", jsonIndo);
-                intent.putExtra("jsonTitle", surah.getEnglishName());
-                context.startActivity(intent);
+                TemporaryData.saveLastSurah(context, json, jsonIndo, surah.getEnglishName());
+                executor.execute(() -> {
+                    Intent intent = new Intent(context, LauncherSurahActivity.class);
+                    intent.putExtra("jsonlist", json);
+                    intent.putExtra("jsonlistIndo", jsonIndo);
+                    intent.putExtra("jsonTitle", surah.getEnglishName());
+                    handler.post(() -> {
+                        context.startActivity(intent);
+                    });
+                });
             }
         });
     }

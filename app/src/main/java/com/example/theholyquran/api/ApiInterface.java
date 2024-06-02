@@ -2,7 +2,9 @@ package com.example.theholyquran.api;
 
 import com.example.theholyquran.model.Cek;
 import com.example.theholyquran.model.Data;
+import com.example.theholyquran.model.Doa;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -21,5 +23,9 @@ public interface ApiInterface {
     Call<Cek> getSurahTranslation(/*@Path("id")int id*/);
 
     // id.indonesian
+
+    @GET("/api")
+    Call<ResponseBody> getAllDoa();
+
 }
 

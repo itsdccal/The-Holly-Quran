@@ -30,7 +30,7 @@ public class AyatAdapter extends RecyclerView.Adapter<AyatAdapter.Holder> {
     @Override
     public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         context = parent.getContext();
-        View view = LayoutInflater.from(context).inflate(R.layout.layout_ayat, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_ayat, parent, false);
         return new Holder(view);
     }
 
