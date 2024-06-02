@@ -60,18 +60,25 @@ public class SearchSurah extends AppCompatActivity {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                surahAdapter.filter(query);
+                if (surahAdapter != null) {
+                    if (surahAdapter.getItemCount() > 0) {
+                        surahAdapter.filter(query);
+                    }
+                }
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                surahAdapter.filter(newText);
+                if (surahAdapter != null) {
+                    if (surahAdapter.getItemCount() > 0) {
+                        surahAdapter.filter(newText);
+                    }
+                }
                 return false;
             }
-
-
         });
+
 
         return true;
     }
