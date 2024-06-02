@@ -20,5 +20,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "The Holy Quran"
-include(":app")
- 
+include ':app'
