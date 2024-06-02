@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">The Holy Quran</string>
+    <string name="title_surah">Surah</string>
+    <string name="title_doa">Doa</string>
+    <string name="title_about">Tentang</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome_title">The Holy Quran</string>
+    <string name="welcome_message">Membaca Al-Quran menjadi lebih mudah</string>
 </resources>
